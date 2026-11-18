@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorto Renovations | Your Home, Our Specialty</title>
+  <meta name="description" content="Sorto Renovations — Remodeling, Kitchens, Bathrooms, Floors, Drywall, Painting, Carpentry, Decks & Porches. Call 706-618-9735 or Text 470-534-8349." />
+
+  <!-- Google Fonts: Montserrat / Oswald style bold display + Inter for crisp readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            midnight: {
+              950: '#060D1C',
+              900: '#081124',
+              800: '#0B1933',
+              700: '#102447',
+            },
+            royal: {
+              400: '#3898FF',
+              500: '#1E90FF',
+              600: '#0066FF',
+              700: '#0052CC',
+              800: '#003D99',
+            },
+          },
+          boxShadow: {
+            'royal-glow': '0 10px 30px -5px rgba(0, 102, 255, 0.45)',
+            'card-depth': '0 20px 40px -15px rgba(0, 0, 0, 0.65)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom metallic silver & royal blue typography matching the Sorto Renovations business card */
+    .text-metallic-silver {
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 48%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.65));
+    }
+
+    .text-royal-gradient {
+      background: linear-gradient(180deg, #4DA6FF 0%, #0066FF 55%, #0044B3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
+    }
+
+    /* Diagonal geometric accent inspired by the business card background */
+    .hero-diagonal-bg {
+      background-color: #081124;
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(0, 102, 255, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 88% 80%, rgba(30, 144, 255, 0.2) 0%, transparent 45%),
+        linear-gradient(125deg, #060D1C 0%, #0B1933 55%, #081124 100%);
+    }
+
+    /* Smooth accordion transition using CSS grid rows */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .accordion-item[data-open="true"] .accordion-content {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+    .accordion-item[data-open="true"] .accordion-chevron {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body class="bg-midnight-900 text-white font-sans antialiased selection:bg-royal-600 selection:text-white pb-24 md:pb-0">
+
+  <!-- =====================================================================
+       TOP NAVIGATION BAR
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-midnight-950/90 backdrop-blur-md border-b border-royal-600/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between gap-4">
+      <!-- Brand Wordmark -->
+      <a href="#top" class="flex items-center group focus:outline-none">
+        <div class="leading-tight">
+          <span class="block font-display font-black text-2xl sm:text-3xl tracking-wide text-metallic-silver">SORTO</span>
+          <span class="block font-display font-extrabold text-sm sm:text-base tracking-widest text-royal-400">RENOVATIONS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-200">
+        <a href="#services" class="hover:text-royal-400 transition-colors">Services</a>
+        <a href="#our-work" class="hover:text-royal-400 transition-colors">Our Work</a>
+        <a href="#contact" class="hover:text-royal-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Desktop Quick Call & Text Actions -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <a
+          href="tel:7066189735"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-royal-600 to-royal-700 hover:from-royal-500 hover:to-royal-600 text-white font-bold text-sm shadow-royal-glow border border-royal-400/40 transition-all active:scale-95"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+          </svg>
+          <span>Call 706-618-9735</span>
+        </a>
+        <a
+          href="sms:4705348349"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-midnight-800 hover:bg-midnight-700 text-white font-bold text-sm border border-royal-500/60 transition-all active:scale-95"
+        >
+          <svg class="w-4 h-4 text-royal-400 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 11H7v-2h10v2zm0-3H7V8h10v2z" />
+          </svg>
+          <span>Text 470-534-8349</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       HERO SECTION — BUSINESS CARD INSPIRED BRANDING & QUICK CONTACT
+       ===================================================================== -->
+  <section id="top" class="relative overflow-hidden hero-diagonal-bg border-b-4 border-royal-600">
+    <!-- Subtle Royal Blue Angled Edge Accent (echoing the business card corner stripes) -->
+    <div class="pointer-events-none absolute -top-24 -left-24 w-72 h-72 bg-gradient-to-br from-royal-500/35 to-transparent rotate-12 blur-2xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-gradient-to-tl from-royal-600/30 to-transparent -rotate-12 blur-2xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left / Top Column: Custom Business Card SVG Emblem + Headline + Call/Text Buttons -->
+        <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <!-- Custom SVG Logo recreating the Saw Blade, Crossed Hammers, Roof Peaks & Typography -->
+          <div class="w-full max-w-md sm:max-w-lg mb-6">
+            <svg viewBox="0 0 540 310" class="w-full h-auto drop-shadow-[0_14px_28px_rgba(0,0,0,0.75)]" role="img" aria-label="Sorto Renovations Logo - Your Home, Our Specialty">
+              <defs>
+                <!-- Metallic Silver Gradient for Saw Blade, Hammers, and SORTO -->
+                <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#FFFFFF" />
+                  <stop offset="45%" stop-color="#E2E8F0" />
+                  <stop offset="75%" stop-color="#94A3B8" />
+                  <stop offset="100%" stop-color="#CBD5E1" />
+                </linearGradient>
+
+                <!-- Royal Blue Gradient for Roof Peaks & RENOVATIONS -->
+                <linearGradient id="royalBlueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#4DA6FF" />
+                  <stop offset="50%" stop-color="#0066FF" />
+                  <stop offset="100%" stop-color="#003D99" />
+                </linearGradient>
+
+                <!-- Inner Saw Blade Dark Backing -->
+                <linearGradient id="bladeInnerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0B1933" />
+                  <stop offset="100%" stop-color="#060D1C" />
+                </linearGradient>
+              </defs>
+
+              <!-- Circular Saw Blade Top Half -->
+              <g transform="translate(270, 128)">
+                <!-- Outer Serrated Teeth Ring -->
+                <path
+                  d="M -112,0 L -118,-14 L -106,-18 L -111,-33 L -98,-35 L -100,-51 L -87,-51 L -86,-67 L -73,-65 L -69,-81 L -57,-76 L -50,-92 L -39,-85 L -30,-100 L -20,-91 L -9,-104 L 0,-94 L 12,-104 L 20,-91 L 32,-100 L 39,-85 L 52,-92 L 57,-76 L 71,-81 L 73,-65 L 88,-67 L 87,-51 L 102,-51 L 98,-35 L 113,-33 L 106,-18 L 120,-14 L 112,0 Z"
+                  fill="url(#silverGrad)"
+                />
+                <!-- Inner Dark Navy Cutout -->
+                <path d="M -90,0 A 90,90 0 0,1 90,0 Z" fill="url(#bladeInnerGrad)" />
+                <path d="M -84,0 A 84,84 0 0,1 84,0" stroke="url(#silverGrad)" stroke-width="3" fill="none" />
+
+                <!-- Crossed Hammers Inside Saw Blade -->
+                <g transform="translate(0, -45)">
+                  <!-- Left-to-Right Hammer -->
+                  <g transform="rotate(-42)">
+                    <rect x="-3" y="-14" width="6" height="44" rx="2" fill="url(#silverGrad)" />
+                    <path d="M -14,-18 H 10 L 16,-13 L 10,-9 H -14 Z" fill="url(#silverGrad)" />
+                  </g>
+                  <!-- Right-to-Left Hammer -->
+                  <g transform="rotate(42)">
+                    <rect x="-3" y="-14" width="6" height="44" rx="2" fill="url(#silverGrad)" />
+                    <path d="M -10,-18 H 14 V -9 H -10 L -16,-13 Z" fill="url(#silverGrad)" />
+                  </g>
+                </g>
+              </g>
+
+              <!-- Triple Royal Blue Roof Peaks -->
+              <g transform="translate(270, 128)">
+                <!-- Left Roof Peak -->
+                <polygon points="-96,2 -58,-28 -20,2 -28,2 -58,-21 -88,2" fill="url(#royalBlueGrad)" stroke="#7CC0FF" stroke-width="1" />
+                <!-- Right Roof Peak -->
+                <polygon points="20,2 58,-28 96,2 88,2 58,-21 28,2" fill="url(#royalBlueGrad)" stroke="#7CC0FF" stroke-width="1" />
+                <!-- Center Main Roof Peak -->
+                <polygon points="-56,2 0,-42 56,2 46,2 0,-34 -46,2" fill="url(#royalBlueGrad)" stroke="#FFFFFF" stroke-width="1.2" />
+
+                <!-- White Window Panes Under Each Peak -->
+                <!-- Left 4-pane window -->
+                <g fill="#FFFFFF" transform="translate(-63, -11)">
+                  <rect x="0" y="0" width="4.5" height="4.5" />
+                  <rect x="6" y="0" width="4.5" height="4.5" />
+                  <rect x="0" y="6" width="4.5" height="4.5" />
+                  <rect x="6" y="6" width="4.5" height="4.5" />
+                </g>
+                <!-- Center 4-pane window -->
+                <g fill="#FFFFFF" transform="translate(-6, -15)">
+                  <rect x="0" y="0" width="5.5" height="5.5" />
+                  <rect x="7" y="0" width="5.5" height="5.5" />
+                  <rect x="0" y="7" width="5.5" height="5.5" />
+                  <rect x="7" y="7" width="5.5" height="5.5" />
+                </g>
+                <!-- Right 4-pane window -->
+                <g fill="#FFFFFF" transform="translate(52, -11)">
+                  <rect x="0" y="0" width="4.5" height="4.5" />
+                  <rect x="6" y="0" width="4.5" height="4.5" />
+                  <rect x="0" y="6" width="4.5" height="4.5" />
+                  <rect x="6" y="6" width="4.5" height="4.5" />
+                </g>
+
+                <!-- Horizontal Royal Blue Accent Bar -->
+                <polygon points="-132,6 132,6 124,11 -124,11" fill="url(#royalBlueGrad)" />
+              </g>
+
+              <!-- Bold Metallic Silver "SORTO" -->
+              <text
+                x="270"
+                y="196"
+                text-anchor="middle"
+                font-family="Montserrat, sans-serif"
+                font-weight="900"
+                font-size="68"
+                letter-spacing="4"
+                fill="url(#silverGrad)"
+                stroke="#060D1C"
+                stroke-width="2"
+              >
+                SORTO
+              </text>
+
+              <!-- Bold Royal Blue "RENOVATIONS" -->
+              <text
+                x="270"
+                y="248"
+                text-anchor="middle"
+                font-family="Montserrat, sans-serif"
+                font-weight="900"
+                font-size="47"
+                letter-spacing="2"
+                fill="url(#royalBlueGrad)"
+                stroke="#FFFFFF"
+                stroke-width="1.2"
+              >
+                RENOVATIONS
+              </text>
+
+              <!-- Tagline with Left & Right Royal Blue Bars -->
+              <line x1="78" y1="274" x2="128" y2="274" stroke="#1E90FF" stroke-width="3.5" stroke-linecap="round" />
+              <text
+                x="270"
+                y="280"
+                text-anchor="middle"
+                font-family="Montserrat, sans-serif"
+                font-weight="800"
+                font-size="16.5"
+                letter-spacing="2.2"
+                fill="#FFFFFF"
+              >
+                YOUR HOME, OUR SPECIALTY
+              </text>
+              <line x1="412" y1="274" x2="462" y2="274" stroke="#1E90FF" stroke-width="3.5" stroke-linecap="round" />
+            </svg>
+          </div>
+
+          <p class="text-slate-200 text-base sm:text-lg max-w-xl mb-8 leading-relaxed">
+            Quality residential remodeling and craftsmanship you can trust. From complete kitchen &amp; bathroom transformations to custom carpentry, flooring, and outdoor decks—reach out today for a free estimate.
+          </p>
+
+          <!-- Primary Call & Text Action Buttons -->
+          <div class="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href="tel:7066189735"
+              class="group flex items-center justify-center sm:justify-start gap-4 px-6 py-4 rounded-2xl bg-gradient-to-r from-royal-600 via-royal-600 to-royal-700 hover:from-royal-500 hover:to-royal-600 text-white shadow-royal-glow border border-royal-400/50 transition-all hover:-translate-y-0.5 active:scale-95"
+            >
+              <span class="w-12 h-12 rounded-full bg-white/15 border border-white/30 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+                </svg>
+              </span>
+              <span class="text-left">
+                <span class="block text-xs font-extrabold uppercase tracking-wider text-royal-100">Call Now</span>
+                <span class="block font-display font-black text-xl sm:text-2xl tracking-tight">706-618-9735</span>
+              </span>
+            </a>
+
+            <a
+              href="sms:4705348349"
+              class="group flex items-center justify-center sm:justify-start gap-4 px-6 py-4 rounded-2xl bg-midnight-800/95 hover:bg-midnight-700 text-white shadow-card-depth border-2 border-royal-500/70 hover:border-royal-400 transition-all hover:-translate-y-0.5 active:scale-95"
+            >
+              <span class="w-12 h-12 rounded-full bg-royal-600/25 border border-royal-400/50 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <svg class="w-6 h-6 text-royal-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 11H7v-2h10v2zm0-3H7V8h10v2z" />
+                </svg>
+              </span>
+              <span class="text-left">
+                <span class="block text-xs font-extrabold uppercase tracking-wider text-royal-400">Text Us</span>
+                <span class="block font-display font-black text-xl sm:text-2xl tracking-tight">470-534-8349</span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right / Bottom Column: Services Card Directly Inspired by the Business Card Checklist -->
+        <div id="services" class="lg:col-span-5">
+          <div class="rounded-3xl bg-gradient-to-b from-midnight-800/95 to-midnight-950/95 border border-royal-500/40 p-6 sm:p-8 shadow-card-depth relative overflow-hidden">
+            <!-- Top Accent Strip -->
+            <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-royal-700 via-royal-400 to-royal-700"></div>
+
+            <div class="mb-6">
+              <h2 class="font-display font-black text-2xl sm:text-3xl text-metallic-silver">OUR SERVICES</h2>
+            </div>
+
+            <!-- 9 Services from the Business Card with Royal Blue Checkmarks -->
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3.5">
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">REMODELING</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">KITCHENS</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">BATHROOMS</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">FLOORS</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">DRYWALL</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">PAINTING</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">CARPENTRY</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-midnight-900/70 border border-white/5 hover:border-royal-500/40 transition-colors">
+                <svg class="w-6 h-6 text-royal-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-white">DECKS / PORCHES</span>
+              </li>
+
+              <li class="flex items-center gap-3.5 p-2.5 rounded-xl bg-royal-600/15 border border-royal-500/30 sm:col-span-2 lg:col-span-1">
+                <svg class="w-6 h-6 text-royal-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span class="font-display font-extrabold text-base sm:text-lg tracking-wide text-royal-300">AND MORE...</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       "OUR WORK" ACCORDION GALLERY SECTION
+       ===================================================================== -->
+  <section id="our-work" class="py-16 sm:py-24 bg-midnight-900 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <!-- Section Heading -->
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-metallic-silver tracking-tight">
+          OUR WORK
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+          Select a project category below to view completed renovation work. Click any photo to inspect it full-screen, or use the <strong class="text-royal-400 font-semibold">Add / Preview Photos</strong> button inside any category to preview your own job photos right away.
+        </p>
+      </div>
+
+      <!-- Accordion Container -->
+      <div class="space-y-4" id="work-accordion">
+
+        <!-- ===============================================================
+             CATEGORY 1: KITCHEN REMODELS (Expanded by default)
+             =============================================================== -->
+        <div class="accordion-item rounded-2xl bg-midnight-800 border border-royal-500/35 shadow-card-depth overflow-hidden transition-colors" data-open="true" data-category="kitchens">
+          <button
+            type="button"
+            class="accordion-trigger relative w-full px-14 sm:px-32 py-5 flex items-center justify-center text-center bg-gradient-to-r from-midnight-800 via-midnight-800 to-midnight-700/70 hover:from-midnight-700 hover:to-midnight-700 transition-colors focus:outline-none"
+            aria-expanded="true"
+          >
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-white">Kitchen Remodels</h3>
+            <div class="absolute right-4 sm:right-7 inset-y-0 flex items-center gap-3">
+              <span class="photo-count hidden sm:inline-block px-2.5 py-1 rounded-lg bg-midnight-950/80 text-royal-400 text-xs font-bold border border-royal-500/30">
+                3 Photos
+              </span>
+              <span class="w-9 h-9 rounded-full bg-royal-600/20 border border-royal-500/40 flex items-center justify-center text-royal-400">
+                <svg class="accordion-chevron w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div class="p-5 sm:p-7 border-t border-royal-500/20 bg-midnight-950/40">
+                <!-- Category Toolbar with Instant Local Photo Uploader -->
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                  <span class="text-xs text-slate-400">
+                    Tip: Replace <code class="text-royal-400">images/kitchen-1.jpg</code> in HTML or preview photos below.
+                  </span>
+                  <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-royal-600/20 hover:bg-royal-600/35 text-royal-300 hover:text-white text-xs font-bold border border-royal-500/50 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>Add / Preview Kitchen Photos</span>
+                    <input type="file" accept="image/*" multiple class="hidden category-file-input" />
+                  </label>
+                </div>
+
+                <!-- Photo Grid -->
+                <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/kitchen-1.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/kitchen-1.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Kitchen+Remodel+Photo+1%0A(images%2Fkitchen-1.jpg)';"
+                      alt="Custom Kitchen Island and Cabinetry Remodel by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Kitchens</span>
+                        <span class="block text-sm font-semibold text-white">Custom Island &amp; Cabinetry</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/kitchen-2.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/kitchen-2.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Kitchen+Remodel+Photo+2%0A(images%2Fkitchen-2.jpg)';"
+                      alt="Modern Countertops and Backsplash Installation by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Kitchens</span>
+                        <span class="block text-sm font-semibold text-white">Countertops &amp; Backsplash</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/kitchen-3.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/kitchen-3.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Kitchen+Remodel+Photo+3%0A(images%2Fkitchen-3.jpg)';"
+                      alt="Full Kitchen Layout and Lighting Upgrade by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Kitchens</span>
+                        <span class="block text-sm font-semibold text-white">Full Kitchen Transformation</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             CATEGORY 2: BATHROOM RENOVATIONS
+             =============================================================== -->
+        <div class="accordion-item rounded-2xl bg-midnight-800 border border-royal-500/35 shadow-card-depth overflow-hidden transition-colors" data-open="false" data-category="bathrooms">
+          <button
+            type="button"
+            class="accordion-trigger relative w-full px-14 sm:px-32 py-5 flex items-center justify-center text-center bg-gradient-to-r from-midnight-800 via-midnight-800 to-midnight-700/70 hover:from-midnight-700 hover:to-midnight-700 transition-colors focus:outline-none"
+            aria-expanded="false"
+          >
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-white">Bathroom Renovations</h3>
+            <div class="absolute right-4 sm:right-7 inset-y-0 flex items-center gap-3">
+              <span class="photo-count hidden sm:inline-block px-2.5 py-1 rounded-lg bg-midnight-950/80 text-royal-400 text-xs font-bold border border-royal-500/30">
+                3 Photos
+              </span>
+              <span class="w-9 h-9 rounded-full bg-royal-600/20 border border-royal-500/40 flex items-center justify-center text-royal-400">
+                <svg class="accordion-chevron w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div class="p-5 sm:p-7 border-t border-royal-500/20 bg-midnight-950/40">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                  <span class="text-xs text-slate-400">
+                    Tip: Replace <code class="text-royal-400">images/bathroom-1.jpg</code> in HTML or preview photos below.
+                  </span>
+                  <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-royal-600/20 hover:bg-royal-600/35 text-royal-300 hover:text-white text-xs font-bold border border-royal-500/50 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>Add / Preview Bathroom Photos</span>
+                    <input type="file" accept="image/*" multiple class="hidden category-file-input" />
+                  </label>
+                </div>
+
+                <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/bathroom-1.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/bathroom-1.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Bathroom+Remodel+Photo+1%0A(images%2Fbathroom-1.jpg)';"
+                      alt="Walk-in Tile Shower and Glass Enclosure by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Bathrooms</span>
+                        <span class="block text-sm font-semibold text-white">Walk-In Tile Shower</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/bathroom-2.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/bathroom-2.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Bathroom+Remodel+Photo+2%0A(images%2Fbathroom-2.jpg)';"
+                      alt="Double Vanity and Mirror Upgrade by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Bathrooms</span>
+                        <span class="block text-sm font-semibold text-white">Double Vanity &amp; Lighting</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/bathroom-3.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/bathroom-3.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Bathroom+Remodel+Photo+3%0A(images%2Fbathroom-3.jpg)';"
+                      alt="Master Bath Tile Flooring and Trim by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Bathrooms</span>
+                        <span class="block text-sm font-semibold text-white">Master Bath Renovation</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             CATEGORY 3: DECKS, PORCHES & CARPENTRY
+             =============================================================== -->
+        <div class="accordion-item rounded-2xl bg-midnight-800 border border-royal-500/35 shadow-card-depth overflow-hidden transition-colors" data-open="false" data-category="decks">
+          <button
+            type="button"
+            class="accordion-trigger relative w-full px-14 sm:px-32 py-5 flex items-center justify-center text-center bg-gradient-to-r from-midnight-800 via-midnight-800 to-midnight-700/70 hover:from-midnight-700 hover:to-midnight-700 transition-colors focus:outline-none"
+            aria-expanded="false"
+          >
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-white">Decks, Porches &amp; Carpentry</h3>
+            <div class="absolute right-4 sm:right-7 inset-y-0 flex items-center gap-3">
+              <span class="photo-count hidden sm:inline-block px-2.5 py-1 rounded-lg bg-midnight-950/80 text-royal-400 text-xs font-bold border border-royal-500/30">
+                3 Photos
+              </span>
+              <span class="w-9 h-9 rounded-full bg-royal-600/20 border border-royal-500/40 flex items-center justify-center text-royal-400">
+                <svg class="accordion-chevron w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div class="p-5 sm:p-7 border-t border-royal-500/20 bg-midnight-950/40">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                  <span class="text-xs text-slate-400">
+                    Tip: Replace <code class="text-royal-400">images/deck-1.jpg</code> in HTML or preview photos below.
+                  </span>
+                  <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-royal-600/20 hover:bg-royal-600/35 text-royal-300 hover:text-white text-xs font-bold border border-royal-500/50 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>Add / Preview Deck &amp; Carpentry Photos</span>
+                    <input type="file" accept="image/*" multiple class="hidden category-file-input" />
+                  </label>
+                </div>
+
+                <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/deck-1.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/deck-1.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Covered+Porch+Photo+1%0A(images%2Fdeck-1.jpg)';"
+                      alt="Covered Timber Porch and Deck Construction by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Decks / Porches</span>
+                        <span class="block text-sm font-semibold text-white">Covered Timber Porch</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/deck-2.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/deck-2.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Custom+Deck+Photo+2%0A(images%2Fdeck-2.jpg)';"
+                      alt="Backyard Wood Deck and Railings by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Decks / Porches</span>
+                        <span class="block text-sm font-semibold text-white">Custom Backyard Deck</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/deck-3.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/deck-3.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Carpentry+Photo+3%0A(images%2Fdeck-3.jpg)';"
+                      alt="Custom Wood Trim and Carpentry Work by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Carpentry</span>
+                        <span class="block text-sm font-semibold text-white">Finish Carpentry &amp; Trim</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===============================================================
+             CATEGORY 4: FLOORS, DRYWALL & INTERIOR PAINTING
+             =============================================================== -->
+        <div class="accordion-item rounded-2xl bg-midnight-800 border border-royal-500/35 shadow-card-depth overflow-hidden transition-colors" data-open="false" data-category="interiors">
+          <button
+            type="button"
+            class="accordion-trigger relative w-full px-14 sm:px-32 py-5 flex items-center justify-center text-center bg-gradient-to-r from-midnight-800 via-midnight-800 to-midnight-700/70 hover:from-midnight-700 hover:to-midnight-700 transition-colors focus:outline-none"
+            aria-expanded="false"
+          >
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-white">Floors, Drywall &amp; Painting</h3>
+            <div class="absolute right-4 sm:right-7 inset-y-0 flex items-center gap-3">
+              <span class="photo-count hidden sm:inline-block px-2.5 py-1 rounded-lg bg-midnight-950/80 text-royal-400 text-xs font-bold border border-royal-500/30">
+                3 Photos
+              </span>
+              <span class="w-9 h-9 rounded-full bg-royal-600/20 border border-royal-500/40 flex items-center justify-center text-royal-400">
+                <svg class="accordion-chevron w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </div>
+          </button>
+
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <div class="p-5 sm:p-7 border-t border-royal-500/20 bg-midnight-950/40">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                  <span class="text-xs text-slate-400">
+                    Tip: Replace <code class="text-royal-400">images/interior-1.jpg</code> in HTML or preview photos below.
+                  </span>
+                  <label class="cursor-pointer inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-royal-600/20 hover:bg-royal-600/35 text-royal-300 hover:text-white text-xs font-bold border border-royal-500/50 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span>Add / Preview Flooring &amp; Paint Photos</span>
+                    <input type="file" accept="image/*" multiple class="hidden category-file-input" />
+                  </label>
+                </div>
+
+                <div class="gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/interior-1.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/interior-1.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Flooring+Photo+1%0A(images%2Finterior-1.jpg)';"
+                      alt="Hardwood and Luxury Vinyl Plank Flooring Installation by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Floors</span>
+                        <span class="block text-sm font-semibold text-white">Hardwood &amp; LVP Flooring</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/interior-2.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/interior-2.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Drywall+Photo+2%0A(images%2Finterior-2.jpg)';"
+                      alt="Drywall Hanging, Taping, and Smooth Finishing by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Drywall</span>
+                        <span class="block text-sm font-semibold text-white">Drywall &amp; Ceiling Finishing</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <!-- REPLACE WITH YOUR PHOTO: Save your image as images/interior-3.jpg -->
+                  <figure class="gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/30 aspect-[4/3] cursor-pointer">
+                    <img
+                      src="images/interior-3.jpg"
+                      onerror="this.onerror=null;this.src='https://placehold.co/800x600/0B1933/60A5FA?text=Painting+Photo+3%0A(images%2Finterior-3.jpg)';"
+                      alt="Interior and Exterior Painting by Sorto Renovations"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                      <div>
+                        <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">Painting</span>
+                        <span class="block text-sm font-semibold text-white">Interior &amp; Exterior Painting</span>
+                      </div>
+                      <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DIRECT CALL / TEXT ESTIMATE BANNER
+       ===================================================================== -->
+  <section id="contact" class="py-14 sm:py-20 bg-gradient-to-b from-midnight-950 to-midnight-900 border-t border-royal-600/30">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="rounded-3xl bg-gradient-to-br from-midnight-800 via-midnight-800 to-royal-800/30 border-2 border-royal-500/50 p-7 sm:p-12 shadow-card-depth text-center">
+        <h2 class="font-display font-black text-2xl sm:text-4xl text-metallic-silver mb-3">
+          GET IN TOUCH WITH SORTO RENOVATIONS
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8">
+          Have a renovation idea or need a repair? Tap below to call us directly or send a quick text message with details or photos of your space.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 max-w-2xl mx-auto">
+          <!-- Call Button -->
+          <a
+            href="tel:7066189735"
+            class="flex-1 flex items-center justify-center gap-4 px-6 py-4 rounded-2xl bg-gradient-to-r from-royal-600 to-royal-700 hover:from-royal-500 hover:to-royal-600 text-white shadow-royal-glow border border-royal-400/50 transition-all hover:-translate-y-0.5 active:scale-95"
+          >
+            <span class="w-11 h-11 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+              </svg>
+            </span>
+            <span class="text-left">
+              <span class="block text-xs font-extrabold uppercase tracking-wider text-royal-100">Call</span>
+              <span class="block font-display font-black text-xl sm:text-2xl">706-618-9735</span>
+            </span>
+          </a>
+
+          <!-- Text Button -->
+          <a
+            href="sms:4705348349"
+            class="flex-1 flex items-center justify-center gap-4 px-6 py-4 rounded-2xl bg-midnight-950 hover:bg-midnight-900 text-white border-2 border-royal-500 hover:border-royal-400 transition-all hover:-translate-y-0.5 active:scale-95"
+          >
+            <span class="w-11 h-11 rounded-full bg-royal-600/25 border border-royal-400/50 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-royal-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 11H7v-2h10v2zm0-3H7V8h10v2z" />
+              </svg>
+            </span>
+            <span class="text-left">
+              <span class="block text-xs font-extrabold uppercase tracking-wider text-royal-400">Text</span>
+              <span class="block font-display font-black text-xl sm:text-2xl">470-534-8349</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="bg-midnight-950 border-t border-royal-600/30 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+      <div>
+        <div class="font-display font-black text-xl tracking-wide">
+          <span class="text-metallic-silver">SORTO</span>
+          <span class="text-royal-400 ml-1">RENOVATIONS</span>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-1">
+          Your Home, Our Specialty
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm font-bold">
+        <a href="tel:7066189735" class="text-slate-200 hover:text-royal-400 transition-colors">
+          Call: 706-618-9735
+        </a>
+        <span class="text-royal-600 hidden sm:inline">|</span>
+        <a href="sms:4705348349" class="text-slate-200 hover:text-royal-400 transition-colors">
+          Text: 470-534-8349
+        </a>
+      </div>
+
+      <p class="text-xs text-slate-500">
+        &copy; <span id="current-year"></span> Sorto Renovations. All rights reserved.
+        <span class="block mt-1">Site by Bradshawworks.com</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       STICKY MOBILE BOTTOM ACTION BAR (Instant Tap-to-Call & Tap-to-Text)
+       ===================================================================== -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-midnight-950/95 backdrop-blur-md border-t-2 border-royal-600 px-3 py-2.5 shadow-[0_-10px_25px_rgba(0,0,0,0.75)]">
+    <div class="grid grid-cols-2 gap-2.5 max-w-md mx-auto">
+      <a
+        href="tel:7066189735"
+        class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-gradient-to-r from-royal-600 to-royal-700 text-white font-display font-extrabold text-sm shadow-royal-glow active:scale-95 transition-transform"
+      >
+        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z" />
+        </svg>
+        <span>CALL NOW</span>
+      </a>
+      <a
+        href="sms:4705348349"
+        class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-midnight-800 text-white font-display font-extrabold text-sm border border-royal-500 active:scale-95 transition-transform"
+      >
+        <svg class="w-4 h-4 text-royal-400 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-3 11H7v-2h10v2zm0-3H7V8h10v2z" />
+        </svg>
+        <span>TEXT US</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       FULL-SCREEN PHOTO LIGHTBOX MODAL
+       ===================================================================== -->
+  <div
+    id="lightbox-modal"
+    class="fixed inset-0 z-50 hidden bg-midnight-950/95 backdrop-blur-md p-4 sm:p-8 flex items-center justify-center"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full screen project photo viewer"
+  >
+    <button
+      type="button"
+      id="lightbox-close"
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-midnight-800 hover:bg-royal-600 text-white border border-royal-400/50 flex items-center justify-center transition-colors focus:outline-none"
+      aria-label="Close full-screen photo"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <div class="max-w-4xl w-full flex flex-col items-center">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-h-[75vh] w-auto max-w-full rounded-2xl border-2 border-royal-500/50 shadow-2xl object-contain bg-midnight-900"
+      />
+      <p id="lightbox-caption" class="mt-4 text-center font-display font-bold text-base sm:text-lg text-white"></p>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       INTERACTIVE JAVASCRIPT (Accordion, Lightbox, Live Photo Previewer)
+       ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set current copyright year
+      const yearEl = document.getElementById('current-year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // 1. Accordion Toggle Logic
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      accordionItems.forEach((item) => {
+        const trigger = item.querySelector('.accordion-trigger');
+        trigger.addEventListener('click', () => {
+          const isOpen = item.getAttribute('data-open') === 'true';
+          // Toggle clicked item smoothly
+          item.setAttribute('data-open', String(!isOpen));
+          trigger.setAttribute('aria-expanded', String(!isOpen));
+        });
+      });
+
+      // 2. Lightbox Modal Logic
+      const lightboxModal = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      function openLightbox(src, caption) {
+        lightboxImg.src = src;
+        lightboxImg.alt = caption || 'Sorto Renovations Project Photo';
+        lightboxCaption.textContent = caption || '';
+        lightboxModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightboxModal.classList.add('hidden');
+        lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      // Event delegation for clicking any gallery photo card
+      document.getElementById('work-accordion').addEventListener('click', (e) => {
+        const card = e.target.closest('.gallery-card');
+        if (!card) return;
+        const img = card.querySelector('img');
+        const title = card.querySelector('figcaption span:last-child');
+        if (img) {
+          openLightbox(img.src, title ? title.textContent : img.alt);
+        }
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+          closeLightbox();
+        }
+      });
+
+      // 3. Client-Side Photo Preview / Uploader inside each Accordion Category
+      const fileInputs = document.querySelectorAll('.category-file-input');
+      fileInputs.forEach((input) => {
+        input.addEventListener('change', (e) => {
+          const files = Array.from(e.target.files || []);
+          if (!files.length) return;
+
+          const accordionItem = input.closest('.accordion-item');
+          const grid = accordionItem.querySelector('.gallery-grid');
+          const countBadge = accordionItem.querySelector('.photo-count');
+          const categoryTitle = accordionItem.querySelector('h3')?.textContent || 'Our Work';
+
+          // Replace placeholder cards on first upload in a category so user sees their real photos cleanly
+          if (!grid.dataset.hasCustomUploads) {
+            grid.innerHTML = '';
+            grid.dataset.hasCustomUploads = 'true';
+          }
+
+          files.forEach((file) => {
+            if (!file.type.startsWith('image/')) return;
+            const objectUrl = URL.createObjectURL(file);
+            const cleanName = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]+/g, ' ');
+
+            const figure = document.createElement('figure');
+            figure.className = 'gallery-card group relative rounded-2xl overflow-hidden bg-midnight-900 border border-royal-500/40 aspect-[4/3] cursor-pointer';
+            figure.innerHTML = `
+              <img src="${objectUrl}" alt="${cleanName}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <figcaption class="absolute inset-x-0 bottom-0 p-3.5 bg-gradient-to-t from-midnight-950 via-midnight-950/80 to-transparent flex items-end justify-between">
+                <div>
+                  <span class="block text-xs font-bold text-royal-400 uppercase tracking-wider">${categoryTitle}</span>
+                  <span class="block text-sm font-semibold text-white capitalize">${cleanName}</span>
+                </div>
+                <span class="p-1.5 rounded-lg bg-royal-600/80 text-white opacity-90 group-hover:opacity-100">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16zM11 8v6m-3-3h6"/></svg>
+                </span>
+              </figcaption>
+            `;
+            grid.appendChild(figure);
+          });
+
+          // Update photo count badge
+          const totalCards = grid.querySelectorAll('.gallery-card').length;
+          if (countBadge) {
+            countBadge.textContent = `${totalCards} Photo${totalCards === 1 ? '' : 's'}`;
+          }
+
+          // Reset input so additional photos can be added
+          input.value = '';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
